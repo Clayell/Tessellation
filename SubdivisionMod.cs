@@ -38,6 +38,8 @@ namespace ParallaxOptimized
     {
         public int subdivisionLevel = 1;
         public float subdivisionRadius = 100;
+        public bool usesCbNameLater;
+        public string cbNameLaterName;
         public override void OnQuadBuilt(PQ quad)
         {
             SubdivisionQuadData.quadData.Add(quad, new SubdivisionData(quad, subdivisionLevel, subdivisionRadius, (quad.subdivision == quad.sphereRoot.maxLevel) && (GameSettings.TERRAIN_SHADER_QUALITY == 3)));
@@ -71,6 +73,17 @@ namespace ParallaxOptimized
         {
             get { return Mod.order; }
             set { Mod.order = int.MaxValue - 2; }
+        }
+
+        [ParserTarget("cbNameLaterName", Optional = true)]
+        public string cbNameLaterName
+        {
+            get { return Mod.cbNameLaterName; }
+            set
+            {
+                Mod.cbNameLaterName = value;
+                Mod.usesCbNameLater = true;
+            }
         }
     }
 }

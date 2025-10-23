@@ -71,6 +71,8 @@ namespace ParallaxOptimized
         public Material quadMaterial;
         public bool materialCreated = false;
         public AdvancedSubdivision subdivisionComponent;
+        public bool usesCbNameLater;
+        public string cbNameLaterName;
         public SubdivisionData(PQ quad, int subdivisionLevel, float subdivisionRadius, bool subdividable)
         {
             this.quad = quad;
@@ -92,6 +94,7 @@ namespace ParallaxOptimized
                 SwapMaterial(false);
             }
         }
+
         public void RangeCheck()    //Only start when in range
         {
             Vector3 origin = FlightGlobals.ActiveVessel == null ? Vector3.zero : FlightGlobals.ActiveVessel.transform.position;
@@ -166,7 +169,7 @@ namespace ParallaxOptimized
         }
         public Material DetermineMaterial()
         {
-            ParallaxBody body = ParallaxBodies.parallaxBodies[quad.sphereRoot.name];
+            ParallaxBody body = ParallaxBodies.parallaxBodies[usesCbNameLater ? cbNameLaterName : quad.sphereRoot.name];
 
             float lowStart = body._LowStart;
             float lowEnd = body._LowEnd;
