@@ -1,5 +1,4 @@
 ﻿using Expansions.Missions;
-using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[assembly: KSPAssembly("ParallaxQualityLibrary", 1, 0)]
+//[assembly: KSPAssembly("ParallaxQualityLibrary", 1, 0)]
 namespace ParallaxQualityLibrary
 {
     public class ParallaxPropertyHolder
