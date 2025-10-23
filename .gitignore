@@ -9,3 +9,5 @@ Grass/Grass/packages/
 /.vs
 /obj/Debug
 /obj/Release
+/bin
+/obj/x64/Release
