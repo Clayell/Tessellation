@@ -8,7 +8,7 @@ using ParallaxQualityLibrary;
 using UnityEngine;
 
 [assembly: KSPAssembly("Parallax", 1, 0)]
-//[assembly: KSPAssemblyDependency("ParallaxQualityLibrary", 1, 0)]
+[assembly: KSPAssemblyDependency("ParallaxQualityLibrary", 1, 0)]
 namespace Parallax
 {
     [KSPAddon(KSPAddon.Startup.Instantly, true)]
